@@ -54,10 +54,41 @@ Player.prototype.render = function() {
 Player.prototype.update = function(){
 
 }
+// make the boundries for the player to make sure it's not get out from the screen
+Player.prototype.handleInput = function(keyValue) {
 
-Player.prototype.handleInput = function() {
+if (keyValue === 'up' ) {
+    
+    if(this.y > 0){
+    	
+      this.y -= 83;
+    }
+}
 
+if (keyValue === 'down') {
+	
+	if(this.y<(400)){
+		
+		 this.y += 83;
+	}
+   
+}
 
+if (keyValue === 'right') {
+
+   if(this.x < 396){
+   	
+		 this.x += 98;
+	}
+}
+
+if (keyValue === 'left' ) {
+
+   if(this.x > 4){
+    	
+      this.x -= 98;
+    }
+}
 };
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
