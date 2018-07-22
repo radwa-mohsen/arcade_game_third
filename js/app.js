@@ -11,7 +11,7 @@ var Enemy = function(x,y,speed) {
     this.x = x;
     this.y = y;
     this.speed = speed;
-    this.width = 50;
+    this.width = 70;
     this.height = 50;
     
    
@@ -44,8 +44,8 @@ var Player = function(x,y){
     this.sprite = 'images/char-boy.png';
     this.x = x;
     this.y = y;
-     this.width = 75;
-    this.height = 75;
+     this.width = 60;
+    this.height = 60;
 }
 
 Player.prototype.render = function() {
@@ -69,6 +69,8 @@ win = false;
 
 }}
 
+
+
 // make the boundries for the player to make sure it's not get out from the screen
 var win = false;
 Player.prototype.handleInput = function(keyValue) {
@@ -79,7 +81,7 @@ if (keyValue === 'up' ) {
       this.y -= 83;
       if(this.y == -15){
    	
-    	alert("win")
+    	alert("Congratulationssss You Win !")
         win = true;
     	 player.update();
     }
@@ -125,15 +127,15 @@ if (keyValue === 'left' ) {
 // i push the instance in the array
 var allEnemies = [];
 
-for (var i = 5 ; i >= 0; i--) {
+for (var i = 4 ; i >= 0; i--) {
 	if(i<=2){
-		speed = (i+1)*55;
+		speed = (i+1)*45;
     y = (i+1)*77;
    var bug = new Enemy(0,y,speed);
     allEnemies.push(bug);
 	}
 		else{
-	speed = i*70;
+	speed = i*60;
     y = (i-2)*77;
     x= i*20*22/7 +53;
    var bug = new Enemy(x,y,speed);
