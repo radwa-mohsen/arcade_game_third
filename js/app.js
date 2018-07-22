@@ -52,21 +52,36 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 Player.prototype.update = function(){
+	
+// if(win){
+// 	this.x = 200;
+// this.y = 400;
+// win = false;
+// }
 
 }
+
 // make the boundries for the player to make sure it's not get out from the screen
+var win = false;
 Player.prototype.handleInput = function(keyValue) {
 
 if (keyValue === 'up' ) {
     
-    if(this.y > 0){
+    if(this.y >= -15){
     	
       this.y -= 83;
+      if(this.y == -15){
+   	
+    	alert("win")
+        // win = true;
+    	 //player.update();
     }
+    }
+   
 }
 
 if (keyValue === 'down') {
-	
+
 	if(this.y<(400)){
 		
 		 this.y += 83;
@@ -76,17 +91,17 @@ if (keyValue === 'down') {
 
 if (keyValue === 'right') {
 
-   if(this.x < 396){
+   if(this.x < 400){
    	
-		 this.x += 98;
+		 this.x += 100;
 	}
 }
 
 if (keyValue === 'left' ) {
 
-   if(this.x > 4){
+   if(this.x > 0){
     	
-      this.x -= 98;
+      this.x -= 100;
     }
 }
 };
@@ -103,6 +118,7 @@ for (var i = 2 ; i >= 0; i--) {
     y = (i+1)*77;
    var bug = new Enemy(0,y,speed);
     allEnemies.push(bug);
+
 }
 // create instance of the playerobject
 var player = new Player(200,400);
