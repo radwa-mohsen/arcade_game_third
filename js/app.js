@@ -26,14 +26,9 @@ Enemy.prototype.update = function(dt) {
 // update the new location
     this.x += this.speed * dt;
    
-   //  if (this.x > 909 ??) {
-   //             this.x = Math.random() * -1200??;
-    //        }
-// handle the collision?
-// if(this.location === player.location){
-//     this.location = [0,0];
-//     Player.location = [0,0];
-// }
+   if (this.x > 527) {
+               this.x = 0;
+           }
 
 };
 
@@ -60,13 +55,10 @@ Player.prototype.update = function(){
 
 }
 
-Player.prototype.render = function(){
-    ctx.drawImage(Resources.get(this.sprite),this.x,this.y)
-}
+Player.prototype.handleInput = function() {
 
-Player.prototype.handleInput = function(){
 
-}
+};
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
