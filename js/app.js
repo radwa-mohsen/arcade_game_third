@@ -53,18 +53,25 @@ Player.prototype.render = function() {
 };
 Player.prototype.update = function(){
 	
+for (var i = 0; i < allEnemies.length; i++) {
+if (allEnemies[i].x < this.x + this.width &&
+allEnemies[i].x + allEnemies[i].width > this.x &&
+allEnemies[i].y < this.y + this.height &&
+allEnemies[i].height + allEnemies[i].y > this.y) {
+this.x = 200;
+this.y = 400;
+}}
 if(win){
-	this.x = 200;
+	
+this.x = 200;
 this.y = 400;
 win = false;
-}
 
-}
+}}
 
 // make the boundries for the player to make sure it's not get out from the screen
 var win = false;
 Player.prototype.handleInput = function(keyValue) {
-
 if (keyValue === 'up' ) {
     
     if(this.y >= -15){
@@ -105,6 +112,11 @@ if (keyValue === 'left' ) {
     }
 }
 };
+
+//collision checking idea (not complete)
+//ar collision = false;
+//Player.prototype.checkCollisions = function() {
+//}
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
@@ -147,20 +159,5 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
-// collision checking idea (not complete)
-// Player.prototype.checkCollisions = function() {
-// for (var i = 0; i < allEnemies.length; i++) {
-// if (allEnemies[i].x < this.x + this.width &&
-// allEnemies[i].x + allEnemies[i].width > this.x &&
-// allEnemies[i].y < this.y + this.height &&
-// allEnemies[i].height + allEnemies[i].y > this.y) {
-// // we will reset the game
-// this.reset(); // still didn't write it
-// }
 
-// //check reaching the water
-// else if (this.y <= ??) {
-// this.reset(); 
-// }
-// }};
 
