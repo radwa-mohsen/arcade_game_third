@@ -53,11 +53,11 @@ Player.prototype.render = function() {
 };
 Player.prototype.update = function(){
 	
-// if(win){
-// 	this.x = 200;
-// this.y = 400;
-// win = false;
-// }
+if(win){
+	this.x = 200;
+this.y = 400;
+win = false;
+}
 
 }
 
@@ -73,8 +73,8 @@ if (keyValue === 'up' ) {
       if(this.y == -15){
    	
     	alert("win")
-        // win = true;
-    	 //player.update();
+        win = true;
+    	 player.update();
     }
     }
    
