@@ -52,7 +52,8 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 Player.prototype.update = function(){
-	
+// https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+//collision detection
 for (var i = 0; i < allEnemies.length; i++) {
 if (allEnemies[i].x < this.x + this.width &&
 allEnemies[i].x + allEnemies[i].width > this.x &&
