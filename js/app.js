@@ -113,11 +113,21 @@ if (keyValue === 'left' ) {
 // i push the instance in the array
 var allEnemies = [];
 
-for (var i = 2 ; i >= 0; i--) {
-    speed = (i+1.2)*30;
+for (var i = 5 ; i >= 0; i--) {
+	if(i<=2){
+		speed = (i+1)*55;
     y = (i+1)*77;
    var bug = new Enemy(0,y,speed);
     allEnemies.push(bug);
+	}
+		else{
+	speed = i*70;
+    y = (i-2)*77;
+    x= i*20*22/7 +53;
+   var bug = new Enemy(x,y,speed);
+    allEnemies.push(bug);
+}
+    
 
 }
 // create instance of the playerobject
