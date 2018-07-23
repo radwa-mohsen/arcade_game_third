@@ -125,7 +125,7 @@ for (var i = 4 ; i >= 0; i--) {
 	    allEnemies.push(bug);
 	}
 	else{
-		speed = i*60;
+	    speed = i*60;
 	    y = (i-2)*77;
 	    x= i*20*22/7 +53;
 	    var bug = new Enemy(x,y,speed);
