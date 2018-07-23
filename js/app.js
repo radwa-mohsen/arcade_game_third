@@ -123,7 +123,7 @@ for (var i = 4 ; i >= 0; i--) {
         y = (i+1)*77;
 	    var bug = new Enemy(0,y,speed);
 	    allEnemies.push(bug);
-	};
+	}
 	else{
 		speed = i*60;
 	    y = (i-2)*77;
